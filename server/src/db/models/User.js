@@ -63,10 +63,15 @@ module.exports = (sequelize, DataTypes) => {
   User.associate = function (models) {
     User.hasMany(models.Order, { foreignKey: 'user_id', targetKey: 'id' });
   };
+ //
+  User.associate = function (models) {
+    User.hasMany(models.Transactions,   
+      { foreignKey: 'user_id', targetKey: 'id' });
+ //
 
   User.associate = function (models) {
     User.hasMany(models.Participant,
-      { foreignKey: 'user_id', targetKey: 'id' });
+      { foreignKey: 'userId', });//по идее такой же ключ в транзакциях но почему тогда там он назівается так же как и поле в модели
   };
 
   User.associate = function (models) {

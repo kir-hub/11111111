@@ -3,6 +3,9 @@ const NotFound = require('../errors/UserNotFoundError');
 const RightsError = require('../errors/RightsError');
 const ServerError = require('../errors/ServerError');
 import CONSTANTS from '../../constants';
+const moment = require('moment');
+const {Op } = require('sequelize');
+
 
 module.exports.parseBody = (req, res, next) => {
   req.body.contests = JSON.parse(req.body.contests);
@@ -119,3 +122,25 @@ module.exports.canUpdateContest = async (req, res, next) => {
   }
 };
 
+module.exports.createQueryFilter = async(req, res, next) =>{
+  try{
+    const queryFilter = {
+      where: {
+        fileName: { [Op.not]: null },
+      },
+    };
+
+    if (req.body.from){
+      queryFilter.where.createAt = {
+        [Op.gte] : moment (req.body.from).format(),
+      };
+    }
+
+    req.body.queryFilter = queryFilter;
+    next();
+    // queryFilter.where.createAt;
+    // const queryFilter ={};
+  }catch(e){
+    next(new ServerError());
+  }
+};

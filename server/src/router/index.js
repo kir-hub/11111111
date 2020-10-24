@@ -38,7 +38,7 @@ router.post(
   userController.payment,
 );
 
-router.post(
+router.get(
   '/getCustomersContests',
   checkToken.checkToken,
   contestController.getCustomersContests,
@@ -51,14 +51,14 @@ router.get(
   contestController.getContestById,
 );
 
-router.post(
+router.get(
   '/getAllContests',
   checkToken.checkToken,
   basicMiddlewares.onlyForCreative,
   contestController.getContests,
 );
 
-router.post(
+router.get(
   '/getUser',
   checkToken.checkAuth,
 );
@@ -83,6 +83,10 @@ router.post(
   basicMiddlewares.canSendOffer,
   contestController.setNewOffer,
 );
+
+router.get('/getOffersFiles',
+  basicMiddlewares.createQueryFilter,
+  contestController.getOffersFiles);
 
 router.post(
   '/setOfferStatus',
@@ -118,13 +122,13 @@ router.post(
   chatController.addMessage,
 );
 
-router.post(
+router.get(
   '/getChat',
   checkToken.checkToken,
   chatController.getChat,
 );
 
-router.post(
+router.get(
   '/getPreview',
   checkToken.checkToken,
   chatController.getPreview,
@@ -160,19 +164,19 @@ router.post(
   chatController.addNewChatToCatalog,
 );
 
-router.post(
+router.delete(
   '/removeChatFromCatalog',
   checkToken.checkToken,
   chatController.removeChatFromCatalog,
 );
 
-router.post(
+router.delete(
   '/deleteCatalog',
   checkToken.checkToken,
   chatController.deleteCatalog,
 );
 
-router.post(
+router.get(
   '/getCatalogs',
   checkToken.checkToken,
   chatController.getCatalogs,

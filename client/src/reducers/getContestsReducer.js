@@ -8,6 +8,7 @@ const initialState = {
     customerFilter: CONSTANTS.CONTEST_STATUS_ACTIVE,
     creatorFilter: {
         typeIndex: 1,
+        selectedContestTypes: [],
         contestId: '',
         industry: '',
         awardSort: 'asc',
