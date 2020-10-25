@@ -182,4 +182,13 @@ router.get(
   chatController.getCatalogs,
 );
 
+router.get(
+  '/getTransactionHistory',
+  //checkToken.checkToken,
+  basicMiddlewares.onlyForCustomer,
+  userController.getTransactionsHistory,
+
+
+)
+
 module.exports = router;

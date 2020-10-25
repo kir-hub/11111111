@@ -17,10 +17,10 @@ const TransactionTable = props =>{
                             <td>{transaction.id}</td>
                             <td>
                                 {
-                                transaction.type === CONSTANTS.INCOME && 'Income'
+                                transaction.typeOperator === CONSTANTS.INCOME && 'Income'
                                 }
                                 {
-                                transaction.type === CONSTANTS.EXPENSE && 'Expense'
+                                transaction.typeOperator === CONSTANTS.EXPENSE && 'Expense'
                                 }
                                 </td>
                             <td>
@@ -42,7 +42,7 @@ TransactionTable.propTypes = {
     data: PropTypes.arrayOf(PropTypes.shape({
         id: PropTypes.number,
         isIncome: PropTypes.bool,
-        sum: PropTypes.number,
+        sum: PropTypes.string,
     }))
 
 }

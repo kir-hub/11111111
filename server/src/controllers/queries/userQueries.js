@@ -39,3 +39,4 @@ module.exports.passwordCompare = async (pass1, pass2) => {
     throw new NotFound('Wrong password');
   }
 };
+

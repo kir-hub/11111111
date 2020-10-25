@@ -451,3 +451,18 @@ export const createToggleContestTypeAction = data =>({
     type: ACTION.TOGGLE_CONTEST_TYPE,
     data
 });
+
+export const createGetTransactionsRequestTypeAction  = () =>({
+    type: ACTION.GET_TRANSACTIONS_REQUEST,
+    
+});
+
+export const createGetTransactionsErrorTypeAction  = () =>({
+    type: ACTION.GET_TRANSACTIONS_ERROR,
+    
+});
+
+export const createGetTransactionsSuccessTypeAction  = () =>({
+    type: ACTION.GET_TRANSACTIONS_SUCCESS,
+    
+});

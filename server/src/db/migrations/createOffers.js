@@ -1,4 +1,4 @@
-'use strict';
+
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
@@ -15,8 +15,8 @@ module.exports = {
 
   down: (queryInterface, Sequelize) =>{
     return queryInterface.removeColumn(
-        'Offers',
-        'createdAt'
-        );
+      'Offers',
+      'createdAt'
+    );
   },
 };

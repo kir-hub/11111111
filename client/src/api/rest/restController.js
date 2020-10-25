@@ -42,6 +42,8 @@ export const getContestById = (data) => {
     });
 };
 
+export const getUserTransactions  = () => http.get('getUserTransactions');
+
 
 // export const getActiveContests = ({offset, limit, typeIndex, contestId, industry, awardSort, ownEntries}) => {
 //     return http.post('getAllContests', {offset, limit, typeIndex, contestId, industry, awardSort, ownEntries})

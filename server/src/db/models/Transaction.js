@@ -44,4 +44,5 @@ module.exports = (sequelize, DataTypes) =>{
     Transactions.belongsTo(models.User,
       { foreignKey: 'userId' });// это поле из нашей таблицы связывается с таблицей юзеров
   };
+  return Transactions;
 };
